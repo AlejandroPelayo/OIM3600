@@ -1,6 +1,6 @@
 import json
 import urllib.request
-import random
+import random    # looked up if there was a way to randomize from a website
 
 #URL = "https://restcountries.com/v3.1/name/{country_name}"
 
@@ -21,7 +21,7 @@ def get_country_info(country_name):
             country_data = json_data[0]
 
             country_info = {
-                "Name" : country_data.get("name", {}).get("common", "N/A"),
+                "Name" : country_data.get("name", {}).get("common", "N/A"),   #looked up/got help for .get function
                 'Capital' : country_data.get("capital", ["N/A"])[0],
                 "Population": country_data.get("population", "N/A"),
                 "Area": country_data.get("area", "N/A")
@@ -64,16 +64,6 @@ def get_random_country_info():
         print(f"Error parsing Json data: {e}")
 
 
-
-# def main():
-#     country_name = input("Enter Country Name: ")
-
-#     if country_name.lower() == "random":
-#         country_info = get_random_country_info()
-#     else:
-#         country_info = get_country_info(country_name)
-
-#     print(country_info)
 
 def main():
     country_name = input("Enter Country Name: ")
