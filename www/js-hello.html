@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+    <form actions="">
+        <input type="text" id="name-input"/>
+        <button>Say Hi</button>
+    </form>
+
+    <script>
+        const input = document.querySelector("#name-input");
+        const h1 = document.querySelector("hi");
+
+        function greet(){
+            const name = input.value;
+            // console.log(name);
+            // window.alaert("Hello, " + name);
+            const message = `Welcome to my website, ${name}!`
+            h1.innerText = message;
+
+    
+
+            event.preventDefault(); //prevent the page from submitting
+
+            const form = document.querySelector("form");
+
+            form.addEventListener("submit", () => {
+            });
+
+            input.addEventListener("heyup", () => {
+            });
+    </script>
+</body>
+</html>

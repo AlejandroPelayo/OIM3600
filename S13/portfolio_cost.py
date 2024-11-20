@@ -16,12 +16,13 @@ def calculate_cost():
             if i == 0:
                 print("name     share     price")
                 continue
-            stock = line.strip('\n').split(",")
+            stock = line.strip('\n').split(",") # stock is a list
             stocks.append(stock)
             # print(stock)
-            name = stock[0]
-            share = int(stock[1])
-            price = float(stock[2])
+            name, share, price = stock # unpacking
+            # name = stock[0]
+            share = int(share)
+            price = float(price)
             print(f"{name:5}{share:100}{price:10.2f}")
             cost = share * price
             total += cost 
@@ -30,11 +31,11 @@ def calculate_cost():
 
 stocks = calculate_cost()
 
-# today I am buying more shares (100 shares each)
-# 1. What data structure to store the original data
+# today I am buying more shares (100 shares each), calculate the total cost
+# 1. What data structure to store the original data? dict 
 # 2. How to update 
 print(stocks)
 
 # is it easy to update shres of each stock in a list?
-for stock in stocks:
+for stock in stocks: # stocks is a list, stock is also a list
     stock[1] = int(stock[1]) + 100
